@@ -25,6 +25,7 @@ Delete particular book record by its id
 
 Install mongoose, node and express in a project
 Run local instance of mongodb or connect to atlas server using connection string.
+in this connection string is used 
 Run app.js file
 Call specific endpoint from postman.
 
