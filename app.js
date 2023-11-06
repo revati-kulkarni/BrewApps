@@ -6,7 +6,7 @@ app.use(bodyParser.json());
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb+srv://revatikulkarni01:<root>@cluster0.2qtfn1l.mongodb.net/?retryWrites=true&w=majority")
+  .connect("mongodb+srv://revatikulkarni01:<password>@cluster0.2qtfn1l.mongodb.net/?retryWrites=true&w=majority")
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
@@ -15,6 +15,8 @@ app.get("/getallbooks", async (req, res) => {
   try {
     const books = await Book.find();
     res.json(books);
+    console.log("books", res.json(books));
+
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
